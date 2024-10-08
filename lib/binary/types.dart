@@ -55,11 +55,32 @@ class FunctionBody {
 }
 
 // Enum for ExportDesc
-enum ExportDesc {
-  Func,
-  Table,
-  Memory,
-  Global,
+abstract class ExportDesc {
+  const ExportDesc();
+}
+
+class FuncExport extends ExportDesc {
+  final int value;
+
+  FuncExport(this.value);
+}
+
+class TableExport extends ExportDesc {
+  final int value;
+
+  TableExport(this.value);
+}
+
+class MemoryExport extends ExportDesc {
+  final int value;
+
+  MemoryExport(this.value);
+}
+
+class GlobalExport extends ExportDesc {
+  final int value;
+
+  GlobalExport(this.value);
 }
 
 // Class for Export
